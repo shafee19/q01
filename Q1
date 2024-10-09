@@ -10,6 +10,7 @@ ls
 ls-l
 sudo a2enmod ssl
 Sudo apt install vim 
+cd /etc/apache2/sites-available
 sudo vim default-ssl.conf
 sudo a2ensite default-ssl.conf 
 sudo systemctl reload apache2 
