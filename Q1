@@ -1,0 +1,21 @@
+sudo apt update
+sudo apt-get install apache2 apache2-doc apache2-utils openssl 
+sudo mkdir /etc/apache2/ssl 
+cd /etc/apache2
+sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 
+-keyout /etc/apache2/ssl/apachekeynew.key -out /etc/apache2/ssl/apachekeynew.cert
+
+cd ssl
+ls
+ls-l
+sudo a2enmod ssl
+Sudo apt install vim 
+sudo vim default-ssl.conf
+sudo a2ensite default-ssl.conf 
+sudo systemctl reload apache2 
+
+
+nmap -A www.com
+sudo nmap -sV www.com
+sudo nmap --script ssl-cert -p 443
+sudo nmap --script vuln www.com
